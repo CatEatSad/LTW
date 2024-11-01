@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website 1</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .total-price {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="Thong_ke.html">
+                <img src="/asset/logo/store.png" alt="Logo" style="width: 40px; height: 40px;" class="me-2">
+                MADCAT
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item me-3"><a class="nav-link" href="Thong_ke.html">Thống kê</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="quan_ly_sp.html">Quản lý sản phẩm</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="quan_ly_ncc.html">Nhà cung cấp</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="Dat_hang.html">Đặt hàng</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="Hoa_don.html">Quản lý đơn hàng</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="info.html">Thông tin</a></li>
+                </ul>
+                <a href="index.html" class="btn btn-outline-danger ms-3">Đăng xuất</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Đặt hàng</h2>
+        <form id="orderForm">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Chọn sản phẩm</th>
+                        <th>Sản phẩm</th>
+                        <th>Nhà cung cấp</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody">
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="product-checkbox" value="1" data-name="Sản phẩm A">
+                        </td>
+                        <td>Sản phẩm A</td>
+                        <td>
+                            <select class="form-select supplier-select" onchange="updatePrice(this)">
+                                <option value="">Chọn nhà cung cấp</option>
+                                <option value="100" data-supplier="Nhà cung cấp 1">Nhà cung cấp 1</option>
+                                <option value="120" data-supplier="Nhà cung cấp 2">Nhà cung cấp 2</option>
+                            </select>
+                        </td>
+                        <td class="price-cell">0</td>
+                        <td><input type="number" class="form-control quantity" value="0" oninput="calculateTotal(this)"></td>
+                        <td class="total-cell">0</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" class="product-checkbox" value="2" data-name="Sản phẩm B">
+                        </td>
+                        <td>Sản phẩm B</td>
+                        <td>
+                            <select class="form-select supplier-select" onchange="updatePrice(this)">
+                                <option value="">Chọn nhà cung cấp</option>
+                                <option value="80" data-supplier="Nhà cung cấp 3">Nhà cung cấp 3</option>
+                                <option value="90" data-supplier="Nhà cung cấp 4">Nhà cung cấp 4</option>
+                            </select>
+                        </td>
+                        <td class="price-cell">0</td>
+                        <td><input type="number" class="form-control quantity" value="0" oninput="calculateTotal(this)"></td>
+                        <td class="total-cell">0</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-end">
+                <h5 class="total-price">Tổng tiền: <span id="totalAmount">0</span> VNĐ</h5>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Đặt hàng</button>
+        </form>
+    </div>
+
+    <footer class="footer bg-light mt-5 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Về chúng tôi</h5>
+                    <p>Chúng tôi là nền tảng kết nối hàng đầu, giúp bạn mở rộng mạng lưới và phát triển sự nghiệp.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Liên hệ</h5>
+                    <p>Email: hungnk.b21at099@stu.ptit.edu.vn<br>
+                    Điện thoại: 0974299896</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Theo dõi chúng tôi</h5>
+                    <p>
+                        <a href="#" class="text-decoration-none"><i class="fab fa-facebook"></i> Facebook</a> |
+                        <a href="#" class="text-decoration-none"><i class="fab fa-twitter"></i> Twitter</a> |
+                        <a href="#" class="text-decoration-none"><i class="fab fa-instagram"></i> Instagram</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updatePrice(select) {
+            const priceCell = select.closest('tr').querySelector('.price-cell');
+            const totalCell = select.closest('tr').querySelector('.total-cell');
+            const quantityInput = select.closest('tr').querySelector('.quantity');
+
+            const price = select.value;
+            priceCell.textContent = price ? price + ' VNĐ' : '0';
+            totalCell.textContent = price && quantityInput.value ? (price * quantityInput.value) + ' VNĐ' : '0';
+            calculateTotal();
+        }
+
+        function calculateTotal(quantityInput) {
+            const row = quantityInput.closest('tr');
+            const priceCell = row.querySelector('.price-cell').textContent.replace(' VNĐ', '');
+            const quantity = quantityInput.value || 0;
+            const totalCell = row.querySelector('.total-cell');
+
+            const total = priceCell * quantity;
+            totalCell.textContent = total + ' VNĐ';
+
+            const totalAmount = [...document.querySelectorAll('.total-cell')]
+                .reduce((sum, cell) => sum + (parseInt(cell.textContent.replace(' VNĐ', '')) || 0), 0);
+
+            document.getElementById('totalAmount').textContent = totalAmount + ' VNĐ';
+        }
+    </script>
+</body>
+</html>

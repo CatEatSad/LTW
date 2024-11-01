@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website 1</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .bordered {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px; /* Khoảng cách dưới cho mỗi phần */
+            background-color: #ffffff; /* Màu nền trắng cho các phần */
+            min-height: 550px; 
+        }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="Thong_ke.html">
+                <img src="/asset/logo/store.png" alt="Logo" style="width: 40px; height: 40px;" class="me-2">
+                MADCAT
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item me-3"><a class="nav-link" href="Thong_ke.html">Thống kê</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="quan_ly_sp.html">Quản lý sản phẩm</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="quan_ly_ncc.html">Nhà cung cấp</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="Dat_hang.html">Đặt hàng</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="Hoa_don.html">Quản lý đơn hàng</a></li>
+                    <li class="nav-item me-3"><a class="nav-link" href="info.html">Thông tin</a></li>
+                </ul>
+                <a href="index.html" class="btn btn-outline-danger ms-3">Đăng xuất</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-5">
+        <h2 class="mb-4">Thông tin người dùng</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="mb-3">Thông tin cá nhân</h4>
+                <div class="bordered">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Họ và tên:</strong></label>
+                        <p id="fullname">Nguyễn Khắc Hưng</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Email:</strong></label>
+                        <p id="email">hungnk.b21at099@stu.ptit.edu.vn</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Số điện thoại:</strong></label>
+                        <p id="phone">0974299896</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Giới tính:</strong></label>
+                        <p id="gender">Nam</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Khu vực:</strong></label>
+                        <p id="region">Hà Nội</p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editPersonalModal">Chỉnh sửa thông tin</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="mb-3">Thông tin doanh nghiệp</h4>
+                <div class="bordered">
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Tên doanh nghiệp:</strong></label>
+                        <p id="companyName">Công ty TNHH ABC</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Email doanh nghiệp:</strong></label>
+                        <p id="companyEmail">abcdxyz2012003@gmail.com</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Số điện thoại doanh nghiệp:</strong></label>
+                        <p id="companyPhone">02812345678</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Địa chỉ:</strong></label>
+                        <p id="address">Hạ mỗ , Đan Phượng, Hà Nội </p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Mã ZIP:</strong></label>
+                        <p id="zip">100000</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Khu vực:</strong></label>
+                        <p id="companyRegion">TP. Hà Nội </p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editCompanyModal">Chỉnh sửa thông tin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hộp thoại chỉnh sửa thông tin cá nhân -->
+    <div class="modal fade" id="editPersonalModal" tabindex="-1" aria-labelledby="editPersonalModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editPersonalModalLabel">Chỉnh sửa thông tin cá nhân</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="personalForm">
+                        <div class="mb-3">
+                            <label class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="editFullname" value="Nguyễn Khắc Hưng" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" value="hungnk.b21at099@stu.ptit.edu.vn" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="editPhone" value="0974299896" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Giới tính</label>
+                            <select class="form-select" id="editGender">
+                                <option value="Nam" selected>Nam</option>
+                                <option value="Nữ">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Khu vực</label>
+                            <input type="text" class="form-control" id="editRegion" value="Hà Nội" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="savePersonalInfo">Lưu thay đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hộp thoại chỉnh sửa thông tin doanh nghiệp -->
+    <div class="modal fade" id="editCompanyModal" tabindex="-1" aria-labelledby="editCompanyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editCompanyModalLabel">Chỉnh sửa thông tin doanh nghiệp</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="companyForm">
+                        <div class="mb-3">
+                            <label class="form-label">Tên doanh nghiệp</label>
+                            <input type="text" class="form-control" id="editCompanyName" value="Công ty TNHH ABC" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email doanh nghiệp</label>
+                            <input type="email" class="form-control" id="editCompanyEmail" value="abcdxyz2012003@gmail.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Số điện thoại doanh nghiệp</label>
+                            <input type="tel" class="form-control" id="editCompanyPhone" value="02812345678" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Địa chỉ</label>
+                            <input type="text" class="form-control" id="editAddress" value="Hạ mỗ , Đan Phượng, Hà Nội" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mã ZIP</label>
+                            <input type="text" class="form-control" id="editZip" value="100000" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Khu vực</label>
+                            <input type="text" class="form-control" id="editCompanyRegion" value="TP. Hà Nội" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="saveCompanyInfo">Lưu thay đổi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('savePersonalInfo').addEventListener('click', function() {
+            // Lấy dữ liệu từ các trường
+            const fullname = document.getElementById('editFullname').value;
+            const email = document.getElementById('editEmail').value;
+            const phone = document.getElementById('editPhone').value;
+            const gender = document.getElementById('editGender').value;
+            const region = document.getElementById('editRegion').value;
+
+            // Cập nhật thông tin hiển thị
+            document.getElementById('fullname').innerText = fullname;
+            document.getElementById('email').innerText = email;
+            document.getElementById('phone').innerText = phone;
+            document.getElementById('gender').innerText = gender;
+            document.getElementById('region').innerText = region;
+
+            // Đóng hộp thoại
+            const personalModal = bootstrap.Modal.getInstance(document.getElementById('editPersonalModal'));
+            personalModal.hide();
+        });
+
+        document.getElementById('saveCompanyInfo').addEventListener('click', function() {
+            // Lấy dữ liệu từ các trường
+            const companyName = document.getElementById('editCompanyName').value;
+            const companyEmail = document.getElementById('editCompanyEmail').value;
+            const companyPhone = document.getElementById('editCompanyPhone').value;
+            const address = document.getElementById('editAddress').value;
+            const zip = document.getElementById('editZip').value;
+            const companyRegion = document.getElementById('editCompanyRegion').value;
+
+            // Cập nhật thông tin hiển thị
+            document.getElementById('companyName').innerText = companyName;
+            document.getElementById('companyEmail').innerText = companyEmail;
+            document.getElementById('companyPhone').innerText = companyPhone;
+            document.getElementById('address').innerText = address;
+            document.getElementById('zip').innerText = zip;
+            document.getElementById('companyRegion').innerText = companyRegion;
+
+            // Đóng hộp thoại
+            const companyModal = bootstrap.Modal.getInstance(document.getElementById('editCompanyModal'));
+            companyModal.hide();
+        });
+    </script>
+</body>
+</html>
