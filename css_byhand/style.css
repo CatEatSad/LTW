@@ -1,0 +1,87 @@
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* Đảm bảo navbar luôn nằm trên các thành phần khác khi cuộn */
+}
+
+        /* Custom Navbar Styles */
+        .navbar {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #3a3a3a !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #007bff !important;
+        }
+
+        .nav-link {
+            position: relative;
+            color: #555;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #007bff;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #007bff;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Offcanvas Modifications */
+        .offcanvas {
+            width: 280px;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        .offcanvas-header {
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        /* Dropdown Modifications */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .dropdown-item {
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }

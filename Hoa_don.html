@@ -6,7 +6,7 @@
     <title>Website 1</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
+    <link href="../css_byhand/style.css" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,20 +18,35 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <form class="d-flex me-3">
+                    <input class="form-control" type="search" placeholder="Tìm kiếm" aria-label="Tìm kiếm">
+                    <button class="btn btn-outline-primary ms-2" type="submit">Tìm</button>
+                </form>
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item me-3"><a class="nav-link" href="Thong_ke.html">Thống kê</a></li>
                     <li class="nav-item me-3"><a class="nav-link" href="quan_ly_sp.html">Quản lý sản phẩm</a></li>
                     <li class="nav-item me-3"><a class="nav-link" href="quan_ly_ncc.html">Nhà cung cấp</a></li>
                     <li class="nav-item me-3"><a class="nav-link" href="Dat_hang.html">Đặt hàng</a></li>
-                    <li class="nav-item me-3"><a class="nav-link" href="Hoa_don.html">Quản lý đơn hàng</a></li>
-                    <li class="nav-item me-3"><a class="nav-link" href="info.html">Thông tin</a></li>
                 </ul>
-                <a href="index.html" class="btn btn-outline-danger ms-3">Đăng xuất</a>
+            </div>
+    
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                    <img src="../asset/icon/bell.png" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+                    <i class="bi bi-chevron-down ms-1"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="info.html">Thông tin cá nhân</a></li>
+                    <li><a class="dropdown-item" href="Hoa_don.html">Quản lý đơn hàng</a></li>
+                    <li><a class="dropdown-item" href="index.html">Đăng xuất</a></li>
+                </ul>
             </div>
         </div>
     </nav>
     
+
     <div class="container mt-5">
         <h2 class="mb-4">Quản lý đơn hàng</h2>
         <div class="mb-3">
